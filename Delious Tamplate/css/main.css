@@ -10,6 +10,7 @@ body {
 
 a {
   color: #3e4141;
+  text-decoration: none;
 }
 
 ul {
@@ -18,6 +19,15 @@ ul {
 
 section {
   padding: 2em 1em;
+}
+
+input {
+  width: 100%;
+  border: 1px solid #555353;
+  border-radius: 0.3em;
+  padding: 0.8em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .navbar {
@@ -111,30 +121,32 @@ section {
   margin: 0;
 }
 
-.feature-section .container ul {
+.feature-section .container ul.features-list {
+  margin: 0;
+  padding-left: 0.1em;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(19rem, 1fr))[auto-git];
-      grid-template-columns: repeat(auto-git, minmax(19rem, 1fr));
+  -ms-grid-columns: (minmax(19rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 }
 
-.feature-section .container ul li {
-  padding: 0.5em 0;
-  color: white;
+.feature-section .container ul.features-list li {
   font-size: 1.1em;
+  margin-bottom: 1em;
+  margin-left: 2em;
   position: relative;
+  color: #f0feff;
 }
 
-.feature-section .container ul li:before {
+.feature-section .container ul.features-list li:before {
   content: "";
-  position: absolute;
-  left: -30px;
+  left: -2em;
   position: absolute;
   width: 20px;
   height: 20px;
   background-image: url("../images/bullet.svg");
   background-size: contain;
-  margin-right: 1em;
+  margin-right: 0.5em;
 }
 
 .testimonial {
@@ -207,10 +219,17 @@ section {
   display: inline-block;
 }
 
-.contact-section iframe {
+.contact-section .contact-right {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+}
+
+.contact-section .contact-right iframe {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
+  margin: 1rem;
 }
 
 nav.menu-btn {
@@ -275,18 +294,52 @@ nav button {
   color: #0f4242;
 }
 
-.contact-section-text .contact-left label .contact-left,
-.contact-section-text .contact-left .contact-right {
+.contact-section-text .contact-left form label {
   display: block;
   font-weight: bold;
   padding: 1em;
+  margin: .5em;
+}
+
+.contact-section-text .btn-send {
+  background-color: var(--primary-color);
+  color: white;
+  border: 1px solid var(--primary-color);
+  border-radius: 5em;
+  display: block;
+  padding: 0.5em;
   margin: 1em;
+  font-weight: bold;
 }
 
 video {
   display: block;
-  margin: 0 auto;
-  width: 100%;
+  margin: 1rem auto;
+  width: 80%;
+  padding: 1rem 0;
+}
+
+footer .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: space-between;
+}
+
+footer .container .logo-footer {
+  padding: 0rem 2rem 0rem 4rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+footer .container .list-footer {
+  padding: 0rem 4rem 0rem 4rem;
+}
+
+footer .container .list-footer li {
+  list-style-type: none;
+  font-weight: bold;
+  color: var(--primary-color);
 }
 
 /* On screens that are 992px wide or less, go from four columns to two columns */
